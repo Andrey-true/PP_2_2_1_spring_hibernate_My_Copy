@@ -26,4 +26,10 @@ public class UserServiceImp implements UserService {
       return userDao.listUsers();
    }
 
+   @Transactional(readOnly = true)
+   @Override
+   public User getUserByCar(String model, int series) {
+      // Вызываем метод DAO для поиска пользователя по модели и серии машины
+      return userDao.getUserByCar(model, series);
+   }
 }
